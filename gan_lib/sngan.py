@@ -49,8 +49,8 @@ def build_discriminator(input_shape):
     return Model(x, y)
 
 def build_train_step(generator, discriminator):
-    d_optimizer = Adam(lr=0.0001, beta_1=0.0, beta_2=0.9)
-    g_optimizer = Adam(lr=0.0001, beta_1=0.0, beta_2=0.9)
+    d_optimizer = Adam(learning_rate=0.0001, beta_1=0.0, beta_2=0.9)
+    g_optimizer = Adam(learning_rate=0.0001, beta_1=0.0, beta_2=0.9)
 
     @tf.function
     def train_step(real_image, noise):
